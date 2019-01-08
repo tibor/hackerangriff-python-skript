@@ -7,9 +7,9 @@ with io.open("/SPD.txt", "r", encoding="utf-16") as file:
 for line in lines:
     mobil =""
     email =""
-    test = re.search(r"^(\d+\.?\d?)\)", line.strip())
-    if test:
-        print test.group(0)
+    count = re.search(r"^(\d+\.?\d?)\)", line.strip())
+    if count:
+        print count.group(0)
     name = re.search(r"^([A-Z][\wäöü\s-]+)$", line.strip(),re.UNICODE)
     if name:
         print name.group(0)
