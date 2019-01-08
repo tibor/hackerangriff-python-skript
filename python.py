@@ -2,7 +2,7 @@
 # coding: utf8
 import re
 import io
-with io.open("/Users/tibor/Downloads/drive-download-20190104T094250Z-001/SPD.txt", "r", encoding="utf-16") as file:
+with io.open("/SPD.txt", "r", encoding="utf-16") as file:
     lines= file.readlines()
 for line in lines:
     mobil =""
