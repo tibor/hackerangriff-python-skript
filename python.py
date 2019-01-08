@@ -17,7 +17,7 @@ for line in lines:
     if mobil:
         print "x"
         print line
-    email = re.search(r"^(E-?[Mm]ail|[\w\d]+@[\w\d]+\.\w+)$", line.strip, re.UNICODE)
+    email = re.search(r"^(E-?[Mm]ail|[\w\d]+@[\w\d]+\.\w+)$", line.strip(), re.UNICODE)
     if email:
         print "x"
         print line
