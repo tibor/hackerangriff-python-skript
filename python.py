@@ -1,0 +1,23 @@
+#!/usr/bin/env python
+# coding: utf8
+import re
+import io
+with io.open("/Users/tibor/Downloads/drive-download-20190104T094250Z-001/SPD.txt", "r", encoding="utf-16") as file:
+    lines= file.readlines()
+for line in lines:
+    mobil =""
+    email =""
+    test = re.search(r"^(\d+\.?\d?)\)", line.strip())
+    if test:
+        print test.group(0)
+    name = re.search(r"^([A-Z][\wäöü\s-]+)$", line.strip(),re.UNICODE)
+    if name:
+        print name.group(0)
+    mobil = re.search(r"(Mobil|01\d+).*", line.strip(),re.UNICODE)
+    if mobil:
+        print "x"
+        print line
+    email = re.search(r"^(E-?[Mm]ail|[\w\d]+@[\w\d]+\.\w+)$", line.strip, re.UNICODE)
+    if email:
+        print "x"
+        print line
